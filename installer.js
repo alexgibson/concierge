@@ -5,7 +5,7 @@
 
     if (typeof define === 'function' && define.amd) {
         // AMD environment
-        define('install', [], function () {
+        define('installer', [], function () {
             return factory(root, document);
         });
     } else {
@@ -30,6 +30,10 @@
             onSuccess: null,
             onError: null
         };
+
+        if (!element) {
+            throw new Error('Installer(): first arg (el) must be a valid DOM node.');
+        }
 
         if (typeof options === 'object') {
 
