@@ -1,0 +1,16 @@
+{
+	"name": "Test App",
+	"description": "Open Web App Installer Demo App",
+	"launch_path": "/open-web-app-installer/",
+	"icons": {
+		"128": ""
+	},
+	"developer": {
+		"name": "Alex Gibson",
+		"url": "http://alxgbsn.co.uk"
+	},
+	"default_locale": "en",
+	"fullscreen": "true",
+	"type": "web",
+	"installs_allowed_from": ["*"]
+}

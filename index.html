@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+<title>Open Web App Installer</title>
+<script type="text/javascript" src="installer.js"></script>
+<style>
+button {
+	width: 100px;
+	height: 50px;
+	font-size: 16px;
+}
+</style>
+</head>
+<body>
+
+<h1>Open Web App Installer</h1>
+<p>Click the button below to run the installer</p>
+<p>Open Web Apps are currently supported by Firefox, Firefox for Android and Firefox OS.</p>
+<button id="install">Install</button>
+
+<script type="text/javascript">
+window.onload = function() {
+
+	var button = document.getElementById('install');
+	var install = new Installer(button, {
+		onSuccess: successCallback,
+		onError: errorCallback
+	});
+
+	function successCallback () {
+		console.log('app installed');
+	}
+
+	function errorCallback (error) {
+		console.error('Install(): ', error);
+	}
+};
+</script>
+</body>
+</html>
