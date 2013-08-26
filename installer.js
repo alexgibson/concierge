@@ -17,10 +17,10 @@
 
     'use strict';
 
-    function Installer(el, options) {
+    function Installer(options) {
 
         var manifest = location.href.substring(0, location.href.lastIndexOf("/")) + "/manifest.webapp";
-        var element = typeof el === 'object' ? el : document.getElementById(el);
+        var button;
         var request;
         var install;
         var success;
@@ -30,10 +30,6 @@
             onSuccess: null,
             onError: null
         };
-
-        if (!element) {
-            throw new Error('Installer(): first arg (el) must be a valid DOM node.');
-        }
 
         if (typeof options === 'object') {
 
@@ -53,10 +49,15 @@
         }
 
         if (navigator.mozApps) {
+
             request = navigator.mozApps.getSelf();
             request.onsuccess = function () {
+
                 if (!request.result) {
-                    element.onclick = function () {
+                    Installer.prototype.createInstallerBar();
+                    button = document.getElementById('open-web-installer-button');
+
+                    button.onclick = function () {
                         install = navigator.mozApps.install(manifest);
                         install.onsuccess = function () {
                             if (success) {
@@ -68,6 +69,7 @@
                                 error(install.error.name);
                             }
                         };
+                        Installer.prototype.removeInstallerBar();
                     };
                 }
             };
@@ -78,6 +80,24 @@
             };
         }
     }
+
+    Installer.prototype.createInstallerBar = function () {
+        var bar = document.createElement('div');
+        var button = document.createElement('div');
+
+        bar.id = 'open-web-installer';
+        button.id = 'open-web-installer-button';
+        button.setAttribute('role', 'button');
+        button.innerHTML = 'Tap to install app';
+
+        bar.appendChild(button);
+        document.body.appendChild(bar);
+    };
+
+    Installer.prototype.removeInstallerBar = function () {
+        var bar = document.getElementById('open-web-installer');
+        document.body.removeChild(bar);
+    };
 
     return Installer;
 

@@ -5,26 +5,17 @@
 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
 <title>Open Web Installer</title>
 <script type="text/javascript" src="installer.js"></script>
-<style>
-button {
-	width: 100px;
-	height: 50px;
-	font-size: 16px;
-}
-</style>
+<link type="text/css" rel="stylesheet" href="open-web-installer.css" />
 </head>
 <body>
 
-<h1>Open Web Installer</h1>
-<p>Click the button below to run the installer</p>
+<h1>Open Web Installer Demo</h1>
 <p>Open Web Apps are currently supported by Firefox, Firefox for Android and Firefox OS.</p>
-<button id="install">Install</button>
 
 <script type="text/javascript">
 window.onload = function() {
 
-	var button = document.getElementById('install');
-	var install = new Installer(button, {
+	var install = new Installer({
 		onSuccess: successCallback,
 		onError: errorCallback
 	});

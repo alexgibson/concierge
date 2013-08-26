@@ -1,0 +1,19 @@
+#open-web-installer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	color: #fff;
+	font-family: "MozTT", Sans-serif;
+	background: rgba(0,0,0,0.85);
+	animation-duration: 1s;
+	animation-name: fadeBarIn;
+}
+
+@keyframes fadeBarIn {
+	0% {opacity: 0;}	
+	100% {opacity: 1;}
+}
