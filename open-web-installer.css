@@ -1,13 +1,16 @@
 #installer {
     position: fixed;
-    bottom: 0;
+    bottom: 10px;
     left: 0;
-    width: 100%;
-    height: 40px;
-    line-height: 40px;
+    right: auto;
+    height: 44px;
+    width: 90%;
+    margin: 0 5%;
+    line-height: 44px;
     text-align: center;
     color: #fff;
     font-family: "MozTT", Sans-serif;
+    font-size: 18px;
     background: rgba(0,0,0,0.85);
     z-index: 1000;
     animation-duration: 1s;
@@ -20,14 +23,27 @@
     cursor: pointer;
 }
 
+#installer-button:after {
+    content: "";
+}
+
 #installer-close {
     position: relative;
     float: right;
-    width: 40px;
-    height: 40px;
     text-indent: 100%;
     white-space: nowrap;
     overflow: hidden;
+}
+
+#installer-close:before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 44px;
+    height: 44px;
+    font-size: 44px;
+    content: "\00D7";
+    text-indent: 0;
     border-left: 1px solid #fff;
 }
 

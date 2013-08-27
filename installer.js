@@ -52,7 +52,7 @@
 
         if (navigator.mozApps) {
 
-            request = navigator.mozApps.getSelf();
+            request = navigator.mozApps.checkInstalled(url);
             request.onsuccess = function () {
 
                 if (!this.result) {
@@ -65,13 +65,13 @@
                             if (success) {
                                 success();
                             }
+                            Installer.prototype.destroy();
                         };
                         install.onerror = function () {
                             if (error) {
                                 error(this.error.name);
                             }
                         };
-                        Installer.prototype.destroy();
                     };
                 }
             };
@@ -86,7 +86,7 @@
         bar.id = 'installer';
         button.id = 'installer-button';
         button.setAttribute('role', 'button');
-        button.innerHTML = 'Install app';
+        button.innerHTML = 'Tap to install this app';
         close.id = 'installer-close';
         close.setAttribute('role', 'button');
         close.innerHTML = 'Close';
