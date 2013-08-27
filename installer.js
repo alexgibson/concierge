@@ -82,11 +82,12 @@
         var bar = document.createElement('div');
         var button = document.createElement('span');
         var close = document.createElement('span');
+        var action = 'ontouchstart' in window ? 'Tap' : 'Click';
 
         bar.id = 'installer';
         button.id = 'installer-button';
         button.setAttribute('role', 'button');
-        button.innerHTML = 'Tap to install this app';
+        button.innerHTML = action + ' to install this app';
         close.id = 'installer-close';
         close.setAttribute('role', 'button');
         close.innerHTML = 'Close';
