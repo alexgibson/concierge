@@ -1,19 +1,37 @@
-#open-web-installer {
-	position: fixed;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	height: 40px;
-	line-height: 40px;
-	text-align: center;
-	color: #fff;
-	font-family: "MozTT", Sans-serif;
-	background: rgba(0,0,0,0.85);
-	animation-duration: 1s;
-	animation-name: fadeBarIn;
+#installer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: #fff;
+    font-family: "MozTT", Sans-serif;
+    background: rgba(0,0,0,0.85);
+    z-index: 1000;
+    animation-duration: 1s;
+    animation-name: fadeBarIn;
+}
+
+#installer-button,
+#installer-close {
+    display: inline-block;
+    cursor: pointer;
+}
+
+#installer-close {
+    position: relative;
+    float: right;
+    width: 40px;
+    height: 40px;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    border-left: 1px solid #fff;
 }
 
 @keyframes fadeBarIn {
-	0% {opacity: 0;}	
-	100% {opacity: 1;}
+    0% {opacity: 0;}    
+    100% {opacity: 1;}
 }

@@ -19,7 +19,9 @@
 
     function Installer(options) {
 
-        var manifest = location.href.substring(0, location.href.lastIndexOf("/")) + "/manifest.webapp";
+        var href = location.href;
+        var manifest = "/manifest.webapp";
+        var url = href.substring(0, href.lastIndexOf("/")) + manifest;
         var button;
         var request;
         var install;
@@ -53,12 +55,12 @@
             request = navigator.mozApps.getSelf();
             request.onsuccess = function () {
 
-                if (!request.result) {
-                    Installer.prototype.createInstallerBar();
-                    button = document.getElementById('open-web-installer-button');
+                if (!this.result) {
+                    Installer.prototype.create();
+                    button = document.getElementById('installer-button');
 
                     button.onclick = function () {
-                        install = navigator.mozApps.install(manifest);
+                        install = navigator.mozApps.install(url);
                         install.onsuccess = function () {
                             if (success) {
                                 success();
@@ -66,36 +68,39 @@
                         };
                         install.onerror = function () {
                             if (error) {
-                                error(install.error.name);
+                                error(this.error.name);
                             }
                         };
-                        Installer.prototype.removeInstallerBar();
+                        Installer.prototype.destroy();
                     };
-                }
-            };
-            request.onerror = function () {
-                if (error) {
-                    error(request.error.name);
                 }
             };
         }
     }
 
-    Installer.prototype.createInstallerBar = function () {
+    Installer.prototype.create = function () {
         var bar = document.createElement('div');
-        var button = document.createElement('div');
+        var button = document.createElement('span');
+        var close = document.createElement('span');
 
-        bar.id = 'open-web-installer';
-        button.id = 'open-web-installer-button';
+        bar.id = 'installer';
+        button.id = 'installer-button';
         button.setAttribute('role', 'button');
-        button.innerHTML = 'Tap to install app';
+        button.innerHTML = 'Install app';
+        close.id = 'installer-close';
+        close.setAttribute('role', 'button');
+        close.innerHTML = 'Close';
 
         bar.appendChild(button);
+        bar.appendChild(close);
         document.body.appendChild(bar);
+
+        document.getElementById('installer-close').addEventListener('click', this.destroy, false);
     };
 
-    Installer.prototype.removeInstallerBar = function () {
-        var bar = document.getElementById('open-web-installer');
+    Installer.prototype.destroy = function () {
+        var bar = document.getElementById('installer');
+        document.getElementById('installer-close').removeEventListener('click', this.destroy, false);
         document.body.removeChild(bar);
     };
 
