@@ -7,7 +7,7 @@
     width: 90%;
     margin: 0 5%;
     line-height: 44px;
-    color: #fff;
+    color: rgba(255,255,255,0.7);
     font-family: "MozTT", Sans-serif;
     font-size: 18px;
     text-shadow: 1px 1px #000;
@@ -19,14 +19,11 @@
     z-index: 1000;
 }
 
-#installer:hover {
-    background-color: rgba(0,0,0, 0.85);
-}
-
 #installer-button,
 #installer-close {
     display: inline-block;
     cursor: pointer;
+    transition: all .5s ease;
 }
 
 #installer-button {
@@ -60,8 +57,16 @@
     text-align: center;
 }
 
+#installer-button:hover,
+#installer-button:focus,
+#installer-close:hover,
+#installer-close:focus {
+    color: rgba(255,255,255,1);
+    outline: none;
+}
+
 @keyframes fadeBarIn {
-    0% {opacity: 0;}    
+    0% {opacity: 0;}
     100% {opacity: 1;}
 }
 
