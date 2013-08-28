@@ -12,8 +12,7 @@
     font-family: "MozTT", Sans-serif;
     font-size: 18px;
     text-shadow: 1px 1px #000;
-    background-color: rgba(69,72,77, 0.85);
-    background-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.85) 100%);
+    background-color: rgba(0,0,0, 0.85);
     border-radius: 22px;
     animation-duration: 1s;
     animation-name: fadeBarIn;
@@ -22,7 +21,7 @@
 }
 
 #installer:hover {
-    background-color: rgba(89,92,99, 0.85);
+    background-color: rgba(0,0,0, 0.85);
 }
 
 #installer-button,
@@ -63,7 +62,12 @@
 @media all and (min-width: 1000px) {
     #installer {
         width: 30%;
+        height: 30px;
+        line-height: 30px;
         margin: 0 35%;
+    }
+    #installer-close:before {
+        height: 30px;
     }
 }
 
