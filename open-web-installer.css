@@ -14,7 +14,7 @@
     background-color: rgba(0,0,0, 0.85);
     border-radius: 3px;
     animation-duration: 1s;
-    animation-name: fadeBarIn;
+    animation-name: fadeInstaller;
     transition: all .5s ease;
     z-index: 1000;
 }
@@ -65,7 +65,7 @@
     outline: none;
 }
 
-@keyframes fadeBarIn {
+@keyframes fadeInstaller {
     0% {opacity: 0;}
     100% {opacity: 1;}
 }
