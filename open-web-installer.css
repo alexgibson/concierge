@@ -11,10 +11,13 @@
     color: #fff;
     font-family: "MozTT", Sans-serif;
     font-size: 18px;
-    background: rgba(0,0,0,0.85);
-    z-index: 1000;
+    text-shadow: 1px 1px #000;
+    background: #45484d;
+    background: linear-gradient(to bottom, rgba(69,72,77, 0.85) 0%, rgba(0,0,0,0.85) 100%);
+    border-radius: 22px;
     animation-duration: 1s;
     animation-name: fadeBarIn;
+    z-index: 1000;
 }
 
 #installer-button,
@@ -23,8 +26,8 @@
     cursor: pointer;
 }
 
-#installer-button:after {
-    content: "";
+#installer-button {
+    text-indent: 22px;
 }
 
 #installer-close {
@@ -41,13 +44,27 @@
     right: 0;
     width: 44px;
     height: 44px;
-    font-size: 44px;
+    font-size: 20px;
     content: "\00D7";
     text-indent: 0;
-    border-left: 1px solid #fff;
+    border-left: 1px solid #000;
 }
 
 @keyframes fadeBarIn {
     0% {opacity: 0;}    
     100% {opacity: 1;}
+}
+
+@media all and (min-width: 1000px) {
+    #installer {
+        width: 30%;
+        margin: 0 35%;
+    }
+}
+
+@media all and (min-width: 768px) and (max-width: 999px) {
+    #installer {
+        width: 60%;
+        margin: 0 20%;
+    }
 }
