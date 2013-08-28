@@ -25,12 +25,12 @@
 
 #installer-button,
 #installer-close {
+    display: inline-block;
     cursor: pointer;
 }
 
 #installer-button {
     float: left;
-    width: auto;
     text-indent: 1em;
 }
 
@@ -53,7 +53,6 @@
     content: "\00D7";
     text-indent: 0;
     text-align: center;
-    border-left: 1px solid #000;
 }
 
 @keyframes fadeBarIn {
