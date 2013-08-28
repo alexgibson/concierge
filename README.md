@@ -1,7 +1,7 @@
 Open Web Installer
 ==================
 
-A custom UI component for installing [Open Web Apps](https://developer.mozilla.org/en-US/docs/Web/Apps) on Firefox OS, Firefox for Android and Firefox for desktop.
+A responsive UI component for installing [Open Web Apps](https://developer.mozilla.org/en-US/docs/Web/Apps) via the browser.
 
 This project is still in beta status
 
@@ -32,3 +32,8 @@ function errorCallback (error) {
     console.error('Installer() error: ' + error);
 }
 ```
+
+Supported web browsers
+----------------------
+
+Open Web Apps are currently supported by Firefox OS, Firefox for Android and Firefox for desktop.
