@@ -86,9 +86,11 @@
         bar.id = 'installer';
         button.id = 'installer-button';
         button.setAttribute('role', 'button');
+        button.setAttribute('tabIndex', '1');
         button.innerHTML = 'Install this app';
         close.id = 'installer-close';
         close.setAttribute('role', 'button');
+        close.setAttribute('tabIndex', '1');
         close.innerHTML = 'Close';
 
         bar.appendChild(button);
