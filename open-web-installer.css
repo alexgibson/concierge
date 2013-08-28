@@ -65,8 +65,9 @@
     #installer {
         width: 30%;
         height: 30px;
-        line-height: 30px;
         margin: 0 35%;
+        line-height: 30px;
+        font-size: 16px;
     }
     #installer-close:before {
         height: 30px;
