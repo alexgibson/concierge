@@ -25,7 +25,7 @@ var app = new Installer({
 });
 
 function successCallback () {
-    console.log('Installer() success');
+    console.log('App installed!');
 }
 
 function errorCallback (error) {
