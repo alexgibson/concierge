@@ -1,7 +1,7 @@
 {
 	"name": "Test App",
-	"description": "Open Web App Installer Demo App",
-	"launch_path": "/open-web-installer/",
+	"description": "Installer Demo App",
+	"launch_path": "/concierge/",
 	"icons": {
 		"128": ""
 	},
