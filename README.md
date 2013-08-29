@@ -19,7 +19,7 @@ This component can be used as an AMD module, or a global.
 To use create a new `Installer` instance, passing the relevant callbacks you need.
 
 ```
-var page = new Installer({
+var app = new Installer({
     onSuccess: successCallback,
     onError: errorCallback
 });
