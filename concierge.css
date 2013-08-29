@@ -1,4 +1,4 @@
-#installer {
+#concierge {
     position: fixed;
     bottom: 10px;
     left: 0;
@@ -19,24 +19,24 @@
     z-index: 1000;
 }
 
-#installer-button,
-#installer-close {
+#concierge-button,
+#concierge-close {
     display: inline-block;
     cursor: pointer;
     transition: all .5s ease;
 }
 
-#installer-button {
+#concierge-button {
     float: left;
     text-indent: 1em;
 }
 
-#installer-button:after {
+#concierge-button:after {
     content: "\25BE";
     padding-left: .5em;
 }
 
-#installer-close {
+#concierge-close {
     position: relative;
     float: right;
     width: 15%;
@@ -45,7 +45,7 @@
     overflow: hidden;
 }
 
-#installer-close:before {
+#concierge-close:before {
     position: absolute;
     top: 0;
     right: 0;
@@ -57,10 +57,10 @@
     text-align: center;
 }
 
-#installer-button:hover,
-#installer-button:focus,
-#installer-close:hover,
-#installer-close:focus {
+#concierge-button:hover,
+#concierge-button:focus,
+#concierge-close:hover,
+#concierge-close:focus {
     color: rgba(255,255,255,1);
     outline: none;
 }
@@ -71,20 +71,20 @@
 }
 
 @media all and (min-width: 1000px) {
-    #installer {
+    #concierge {
         width: 30%;
         height: 30px;
         margin: 0 35%;
         line-height: 30px;
         font-size: 16px;
     }
-    #installer-close:before {
+    #concierge-close:before {
         height: 30px;
     }
 }
 
 @media all and (min-width: 768px) and (max-width: 999px) {
-    #installer {
+    #concierge {
         width: 60%;
         margin: 0 20%;
     }

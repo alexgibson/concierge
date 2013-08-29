@@ -1,23 +1,22 @@
-
 (function (root, factory) {
 
     'use strict';
 
     if (typeof define === 'function' && define.amd) {
         // AMD environment
-        define('installer', [], function () {
+        define('concierge', [], function () {
             return factory(root, document);
         });
     } else {
         // Browser environment
-        root.Installer = factory(root, document);
+        root.Concierge = factory(root, document);
     }
 
 }(this, function (w, d) {
 
     'use strict';
 
-    function Installer(options) {
+    function Concierge(options) {
 
         var href = location.href;
         var manifest = "/manifest.webapp";
@@ -56,8 +55,8 @@
             request.onsuccess = function () {
 
                 if (!this.result) {
-                    Installer.prototype.create();
-                    button = document.getElementById('installer-button');
+                    Concierge.prototype.create();
+                    button = document.getElementById('concierge-button');
 
                     button.onclick = function () {
                         install = navigator.mozApps.install(url);
@@ -65,7 +64,7 @@
                             if (success) {
                                 success();
                             }
-                            Installer.prototype.destroy();
+                            Concierge.prototype.destroy();
                         };
                         install.onerror = function () {
                             if (error) {
@@ -78,17 +77,17 @@
         }
     }
 
-    Installer.prototype.create = function () {
+    Concierge.prototype.create = function () {
         var bar = document.createElement('div');
         var button = document.createElement('span');
         var close = document.createElement('span');
 
-        bar.id = 'installer';
-        button.id = 'installer-button';
+        bar.id = 'concierge';
+        button.id = 'concierge-button';
         button.setAttribute('role', 'button');
         button.setAttribute('tabIndex', '1');
         button.innerHTML = 'Install this app';
-        close.id = 'installer-close';
+        close.id = 'concierge-close';
         close.setAttribute('role', 'button');
         close.setAttribute('tabIndex', '1');
         close.innerHTML = 'Close';
@@ -97,16 +96,16 @@
         bar.appendChild(close);
         document.body.appendChild(bar);
 
-        document.getElementById('installer-close').addEventListener('click', this.destroy, false);
+        document.getElementById('concierge-close').addEventListener('click', this.destroy, false);
     };
 
-    Installer.prototype.destroy = function () {
-        var bar = document.getElementById('installer');
-        document.getElementById('installer-close').removeEventListener('click', this.destroy, false);
+    Concierge.prototype.destroy = function () {
+        var bar = document.getElementById('concierge');
+        document.getElementById('concierge-close').removeEventListener('click', this.destroy, false);
         document.body.removeChild(bar);
     };
 
-    return Installer;
+    return Concierge;
 
 }));
 

@@ -21,7 +21,7 @@ This component can be used as an AMD module, or a global.
 To use create a new `Concierge` instance, passing the relevant callbacks you need.
 
 ```
-var app = new Installer({
+var install = new Concierge({
     onSuccess: successCallback,
     onError: errorCallback
 });
@@ -31,14 +31,14 @@ function successCallback () {
 }
 
 function errorCallback (error) {
-    console.error('Installer() error: ' + error);
+    console.error('Concierge() error: ' + error);
 }
 ```
 
-Also make sure to link the CSS stylesheet in your template.
+Also make sure to include the CSS styles in your template.
 
 ```
-<link type="text/css" rel="stylesheet" href="open-web-installer.css" />
+<link type="text/css" rel="stylesheet" href="concierge.css" />
 ```
 
 Supported web browsers
