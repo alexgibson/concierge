@@ -33,6 +33,12 @@ function errorCallback (error) {
 }
 ```
 
+Also make sure to include the CSS.
+
+```
+<link type="text/css" rel="stylesheet" href="open-web-installer.css" />
+```
+
 Supported web browsers
 ----------------------
 
