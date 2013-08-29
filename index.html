@@ -3,14 +3,16 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-<title>Open Web Installer</title>
+<title>Installer</title>
 <script type="text/javascript" src="installer.js"></script>
 <link type="text/css" rel="stylesheet" href="open-web-installer.css" />
 </head>
 <body>
 
-<h1>Open Web Installer Demo</h1>
-<p>A custom UI component for installing <a href="https://developer.mozilla.org/en-US/docs/Web/Apps">Open Web Apps</a> on Firefox OS, Firefox for Android and Firefox for desktop.</p>
+<h1>Installer</h1>
+<p>A responsive UI component for installing <a href="https://developer.mozilla.org/en-US/docs/Web/Apps">Open Web Apps</a> via the browser.</p> 
+
+<p>Open Web App API's are currently supported on Firefox OS, Firefox for Android and Firefox for desktop. If you're viewing this page using one of these browsers, you should see an install button at the bottom of the viewport.</p>
 
 <script type="text/javascript">
 window.onload = function() {
@@ -21,7 +23,7 @@ window.onload = function() {
 	});
 
 	function successCallback () {
-		console.log('Installer() success');
+		console.log('App installed!');
 	}
 
 	function errorCallback (error) {
