@@ -1,7 +1,7 @@
 Installer
 =========
 
-A UI component for installing [Open Web Apps](https://developer.mozilla.org/en-US/docs/Web/Apps) via the browser.
+A responsive UI component for installing [Open Web Apps](https://developer.mozilla.org/en-US/docs/Web/Apps) via the browser.
 
 This project is still in beta status
 
