@@ -3,7 +3,7 @@ Installer
 
 A responsive UI component for installing [Open Web Apps](https://developer.mozilla.org/en-US/docs/Web/Apps) via the browser.
 
-Installer automatically generates a customizable “install” button that can be used in any web app, and will only display on supporting browsers if an app has not already been previously installed.
+Installer automatically generates a customizable “install” button that can be used in any web app, and only displays on supporting browsers if an app has not already been previously installed.
 
 Note: This project is still in early stages of development
 
