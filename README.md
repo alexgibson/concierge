@@ -44,4 +44,4 @@ Also make sure to include the CSS styles in your template.
 Supported web browsers
 ----------------------
 
-Open Web Apps are currently supported by Firefox OS, Firefox for Android and Firefox for desktop.
+Open Web Apps are currently supported by Firefox OS, Firefox for Android and Firefox for desktop (Nightly recommended).
