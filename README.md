@@ -1,24 +1,24 @@
-Installer
+Concierge
 =========
 
 A responsive UI component for installing [Open Web Apps](https://developer.mozilla.org/en-US/docs/Web/Apps) via the browser.
 
-Installer automatically generates a customizable “install” button that can be used in any web app. It will only display on devices that support installable web apps, and only if the app has not yet been installed.
+Concierge automatically generates a customizable “install” button that can be used in any web app. It will only display on devices that support installable web apps, and only if the app has not yet been installed.
 
 Note: This project is still in early stages of development
 
 Installation
 ---------------------------------------
 
-* Download: [zip](https://github.com/alexgibson/open-web-installer/archive/master.zip)
-* Git: `git clone https://github.com/alexgibson/open-web-installer.git`
+* Download: [zip](https://github.com/alexgibson/concierge/archive/master.zip)
+* Git: `git clone https://github.com/alexgibson/concierge.git`
 
 Setup
 ---------
 
 This component can be used as an AMD module, or a global.
 
-To use create a new `Installer` instance, passing the relevant callbacks you need.
+To use create a new `Concierge` instance, passing the relevant callbacks you need.
 
 ```
 var app = new Installer({
