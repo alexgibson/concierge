@@ -33,7 +33,7 @@ function errorCallback (error) {
 }
 ```
 
-Also make sure to include the CSS.
+Also make sure to link the CSS stylesheet in your HTML template.
 
 ```
 <link type="text/css" rel="stylesheet" href="open-web-installer.css" />
