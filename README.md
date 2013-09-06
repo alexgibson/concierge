@@ -19,7 +19,7 @@ Setup
 This component can be used as an AMD module, or a global.
 
 ```
-var Concierge = require('cencierge');
+var Concierge = require('concierge');
 ```
 
 To use create a new `Concierge` instance, passing the relevant callbacks you need.
