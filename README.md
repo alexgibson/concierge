@@ -7,6 +7,8 @@ Concierge provides a customisable “install” button that can be used in any w
 
 Note: This project is still in early stages of development
 
+Demo: [https://alexgibson.github.com/concierge](https://alexgibson.github.com/concierge)
+
 Installation
 ---------------------------------------
 
