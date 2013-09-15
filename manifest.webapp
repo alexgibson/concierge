@@ -3,7 +3,7 @@
 	"description": "Installer Demo App",
 	"launch_path": "/concierge/",
 	"icons": {
-		"128": "icon.png"
+		"60": "icon.png"
 	},
 	"developer": {
 		"name": "Alex Gibson",
