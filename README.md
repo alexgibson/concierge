@@ -3,7 +3,7 @@ Concierge
 
 UI component for installing [Open Web Apps](https://developer.mozilla.org/en-US/docs/Web/Apps) via the browser.
 
-Concierge provides a customisable “install” button that can be used in any web app. It will only display on browsers that support installable Open Web Apps, and only if the app has not yet been installed on a device.
+Concierge automatically generates an customisable “install” button that can be used by any Open Web App, using manifest file meta data to create a custom call to action. Concierge will only display on browsers that support installable Open Web Apps, and only if the app has not yet been installed on a device.
 
 Note: This project is still in early stages of development
 
