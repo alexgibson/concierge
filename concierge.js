@@ -18,14 +18,16 @@
 
     function Concierge(options) {
 
-        var href = location.href;
-        var manifest = "/manifest.webapp";
-        var url = href.substring(0, href.lastIndexOf("/")) + manifest;
-        var button;
-        var request;
-        var install;
-        var success;
-        var error;
+        var that = this;
+
+        this.href = location.href;
+        this.manifest = "/manifest.webapp";
+        this.url = this.href.substring(0, this.href.lastIndexOf("/")) + this.manifest;
+        this.button = null;
+        this.request = null;
+        this.install = null;
+        this.success = null;
+        this.error = null;
 
         this.options = {
             onSuccess: null,
@@ -41,34 +43,33 @@
             }
 
             if (typeof this.options.onSuccess === 'function') {
-                success = this.options.onSuccess;
+                this.success = this.options.onSuccess;
             }
 
             if (typeof this.options.onError === 'function') {
-                error = this.options.onError;
+                this.error = this.options.onError;
             }
         }
 
         if (navigator.mozApps) {
-
-            request = navigator.mozApps.checkInstalled(url);
-            request.onsuccess = function () {
-
+            this.request = navigator.mozApps.checkInstalled(this.url);
+            this.request.onsuccess = function () {
                 if (!this.result) {
-                    Concierge.prototype.create(url);
-                    button = document.getElementById('concierge-button');
+                    that.create();
+                    that.button = document.getElementById('concierge-button');
+                    that.button.onclick = function () {
+                        that.install = navigator.mozApps.install(that.url);
 
-                    button.onclick = function () {
-                        install = navigator.mozApps.install(url);
-                        install.onsuccess = function () {
-                            if (success) {
-                                success();
+                        that.install.onsuccess = function () {
+                            if (that.success) {
+                                that.success();
                             }
-                            Concierge.prototype.destroy();
+                            that.destroy();
                         };
-                        install.onerror = function () {
-                            if (error) {
-                                error(this.error.name);
+
+                        that.install.onerror = function () {
+                            if (that.error) {
+                                that.error(this.error.name);
                             }
                         };
                     };
@@ -77,10 +78,10 @@
         }
     }
 
-    Concierge.prototype.getMetaData = function (url) {
+    Concierge.prototype.getMetaData = function () {
         var req = new XMLHttpRequest();
         req.onload = this.parseMetaData;
-        req.open('get', url, true);
+        req.open('get', this.url, true);
         req.send();
     };
 
@@ -88,7 +89,7 @@
         var doc = document;
         var data = JSON.parse(this.responseText);
         var name = data.name;
-        var icon = data.icons['128'];
+        var icon = data.icons['60'] || data.icons['128'];
         var img = doc.getElementById('concierge-icon');
 
         doc.getElementById('concierge-button').innerHTML = 'Install ' + name;
@@ -99,7 +100,7 @@
         }
     };
 
-    Concierge.prototype.create = function (url) {
+    Concierge.prototype.create = function () {
         var doc = document;
         var bar = doc.createElement('div');
         var button = doc.createElement('span');
@@ -123,7 +124,7 @@
 
         doc.getElementById('concierge-close').addEventListener('click', this.destroy, false);
 
-        this.getMetaData(url);
+        this.getMetaData();
     };
 
     Concierge.prototype.destroy = function () {
