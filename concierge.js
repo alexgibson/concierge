@@ -55,7 +55,7 @@
             request.onsuccess = function () {
 
                 if (!this.result) {
-                    Concierge.prototype.create();
+                    Concierge.prototype.create(url);
                     button = document.getElementById('concierge-button');
 
                     button.onclick = function () {
@@ -77,32 +77,60 @@
         }
     }
 
-    Concierge.prototype.create = function () {
-        var bar = document.createElement('div');
-        var button = document.createElement('span');
-        var close = document.createElement('span');
+    Concierge.prototype.getMetaData = function (url) {
+        var req = new XMLHttpRequest();
+        req.onload = this.parseMetaData;
+        req.open('get', url, true);
+        req.send();
+    };
+
+    Concierge.prototype.parseMetaData = function () {
+        var doc = document;
+        var data = JSON.parse(this.responseText);
+        var name = data.name;
+        var icon = data.icons['128'];
+        var img = doc.getElementById('concierge-icon');
+
+        doc.getElementById('concierge-button').innerHTML = 'Install ' + name;
+
+        if (icon) {
+            img.src = icon;
+            img.alt = data.name;
+        }
+    };
+
+    Concierge.prototype.create = function (url) {
+        var doc = document;
+        var bar = doc.createElement('div');
+        var button = doc.createElement('span');
+        var close = doc.createElement('span');
+        var icon = doc.createElement('img');
 
         bar.id = 'concierge';
+        icon.id = 'concierge-icon';
         button.id = 'concierge-button';
         button.setAttribute('role', 'button');
         button.setAttribute('tabIndex', '1');
-        button.innerHTML = 'Install this app';
         close.id = 'concierge-close';
         close.setAttribute('role', 'button');
         close.setAttribute('tabIndex', '1');
         close.innerHTML = 'Close';
 
+        bar.appendChild(icon);
         bar.appendChild(button);
         bar.appendChild(close);
-        document.body.appendChild(bar);
+        doc.body.appendChild(bar);
 
-        document.getElementById('concierge-close').addEventListener('click', this.destroy, false);
+        doc.getElementById('concierge-close').addEventListener('click', this.destroy, false);
+
+        this.getMetaData(url);
     };
 
     Concierge.prototype.destroy = function () {
-        var bar = document.getElementById('concierge');
-        document.getElementById('concierge-close').removeEventListener('click', this.destroy, false);
-        document.body.removeChild(bar);
+        var doc = document;
+        var bar = doc.getElementById('concierge');
+        doc.getElementById('concierge-close').removeEventListener('click', this.destroy, false);
+        doc.body.removeChild(bar);
     };
 
     return Concierge;
