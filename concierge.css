@@ -1,8 +1,7 @@
 #concierge {
-    position: fixed;
+    position: absolute;
     bottom: 10px;
     left: 0;
-    right: auto;
     height: 44px;
     width: 90%;
     margin: 0 5%;
@@ -36,11 +35,6 @@
 #concierge-button {
     float: left;
     text-indent: .5em;
-}
-
-#concierge-button:after {
-    content: "\25BE";
-    padding-left: .5em;
 }
 
 #concierge-close {
