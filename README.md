@@ -5,7 +5,7 @@ A responsive UI component for installing [Open Web Apps](https://developer.mozil
 
 Concierge creates an customisable “install” button that can be used by any Open Web App, using app manifest meta data to populate the UI. Concierge will only display on browsers that support installable Open Web Apps, and only if the app has not yet been installed on a user's device.
 
-Note: This project is still in early stages of development
+Try the demo below on Firefox OS, Firefox for Android, or Firefox Nightly (desktop).
 
 Demo: [https://alexgibson.github.com/concierge](https://alexgibson.github.com/concierge)
 
