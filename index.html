@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="initial-scale=1.0, width=device-width" />
-<title>Concierge</title>
-<script type="text/javascript" src="concierge.js"></script>
-<link type="text/css" rel="stylesheet" href="concierge.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Concierge</title>
+    <script type="text/javascript" src="concierge.js"></script>
+    <link type="text/css" rel="stylesheet" href="concierge.css" />
 </head>
 <body>
 
@@ -19,18 +19,18 @@
 <script type="text/javascript">
 window.onload = function() {
 
-	var install = new Concierge({
-		onSuccess: successCallback,
-		onError: errorCallback
-	});
+    var install = new Concierge({
+        onSuccess: successCallback,
+        onError: errorCallback
+    });
 
-	function successCallback () {
-		console.log('App installed!');
-	}
+    function successCallback () {
+        console.log('App installed!');
+    }
 
-	function errorCallback (error) {
-		console.error('Concierge() error: ' + error);
-	}
+    function errorCallback (error) {
+        console.error('Concierge() error: ' + error);
+    }
 };
 </script>
 </body>
