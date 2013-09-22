@@ -3,7 +3,14 @@ Concierge
 
 A responsive UI component for installing [Open Web Apps](https://developer.mozilla.org/en-US/docs/Web/Apps) via the browser.
 
-Concierge creates an customisable “install” button that can be used by any Open Web App, using app manifest meta data to populate the UI. Concierge will only display on browsers that support installable Open Web Apps, and only if the app has not yet been installed on a user's device.
+Concierge creates an customisable “install” button that can be used by any Open Web App, using app manifest meta data to populate the UI.
+
+Features
+----------
+
+* Shows the app name and icon along side the generated install button.
+* Only appears on browsers that support installable Open Web Apps
+* Only appears if the app has not yet been installed on a device.
 
 Try the demo below on Firefox OS, Firefox for Android, or Firefox Nightly (desktop).
 
@@ -13,6 +20,7 @@ Installation
 ---------------------------------------
 
 * Download: [zip](https://github.com/alexgibson/concierge/archive/master.zip)
+* [Bower](https://github.com/twitter/bower/): `bower install concierge`
 * Git: `git clone https://github.com/alexgibson/concierge.git`
 
 Setup
