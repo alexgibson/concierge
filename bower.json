@@ -7,7 +7,10 @@
         "email": "alxgbsn@gmail.com"
     },
     "keywords": ["javascript", "open web apps", "install", "firefox os"],
-    "main": "./concierge.js",
+    "main": [
+	"./concierge.js",
+	"./concierge.css"
+	],
     "repository": {
         "type": "git",
         "url": "https://github.com/alexgibson/concierge.git"
