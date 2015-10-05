@@ -14,7 +14,7 @@ Features
 
 Try the demo below on Firefox OS, Firefox for Android, or Firefox Nightly (desktop).
 
-Demo: [https://alexgibson.github.com/concierge](https://alexgibson.github.com/concierge)
+Demo: [https://alexgibson.github.io/concierge](https://alexgibson.github.com/concierge)
 
 Installation
 ---------------------------------------
