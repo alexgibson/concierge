@@ -1,7 +1,7 @@
 {
 	"name": "Test App",
 	"description": "Installer Demo App",
-	"launch_path": "",
+	"launch_path": "/concierge/",
 	"icons": {
 		"60": "icon.png"
 	},
