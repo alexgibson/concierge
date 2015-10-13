@@ -1,13 +1,13 @@
 {
 	"name": "Test App",
 	"description": "Installer Demo App",
-	"launch_path": "/concierge/",
+	"launch_path": "",
 	"icons": {
 		"60": "icon.png"
 	},
 	"developer": {
 		"name": "Alex Gibson",
-		"url": "http://alxgbsn.co.uk"
+		"url": " https://alexgibson.github.io/concierge/"
 	},
 	"default_locale": "en",
 	"fullscreen": "true",
