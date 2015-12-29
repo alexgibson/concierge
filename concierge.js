@@ -52,28 +52,37 @@
         }
 
         if (navigator.mozApps) {
-            this.request = navigator.mozApps.checkInstalled(this.url);
+            this.request = navigator.mozApps.getInstalled();
             this.request.onsuccess = function () {
-                if (!this.result) {
-                    that.create();
-                    that.button = document.getElementById('concierge-button');
-                    that.button.onclick = function () {
-                        that.install = navigator.mozApps.install(that.url);
 
-                        that.install.onsuccess = function () {
-                            if (that.success) {
-                                that.success();
-                            }
-                            that.destroy();
-                        };
-
-                        that.install.onerror = function () {
-                            if (that.error) {
-                                that.error(this.error.name);
-                            }
-                        };
-                    };
+                for (var i in that.request.result) {
+                    if (that.request.result[i].manifestURL === that.url) {
+                        return;
+                    }
                 }
+
+                that.create();
+                that.button = document.getElementById('concierge-button');
+                that.button.onclick = function() {
+                    that.install = navigator.mozApps.install(that.url);
+
+                    that.install.onsuccess = function () {
+                        if (that.success) {
+                            that.success();
+                        }
+                        that.destroy();
+                    };
+
+                    that.install.onerror = function () {
+                        if (that.error) {
+                            that.error(this.error.name);
+                        }
+                    };
+                };
+            };
+
+            this.request.onerror = function(e) {
+                console.error(e);
             };
         }
     }
@@ -137,4 +146,3 @@
     return Concierge;
 
 }));
-
