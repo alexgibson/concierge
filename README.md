@@ -1,3 +1,5 @@
+DEPRECATED - WebRT is being removed from Firefox (bug https://bugzilla.mozilla.org/show_bug.cgi?id=1238079).
+
 Concierge
 =========
 
