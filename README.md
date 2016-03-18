@@ -1,14 +1,17 @@
-DEPRECATED - WebRT is being removed from Firefox (bug https://bugzilla.mozilla.org/show_bug.cgi?id=1238079).
+Deprecation note
+================
+
+WebRT is being removed from Firefox: https://bugzilla.mozilla.org/show_bug.cgi?id=1238079
 
 Concierge
-=========
+---------
 
 A responsive UI component for installing [Open Web Apps](https://developer.mozilla.org/en-US/docs/Web/Apps) via the browser.
 
 Concierge creates an customisable “install” button that can be used by any Open Web App, using app manifest meta data to populate the UI.
 
 Features
-----------
+--------
 
 * Shows the app name and icon along side the generated install button.
 * Only appears on browsers that support installable Open Web Apps
@@ -19,14 +22,14 @@ Try the demo below on Firefox OS, Firefox for Android, or Firefox Nightly (deskt
 Demo: [https://alexgibson.github.io/concierge](https://alexgibson.github.com/concierge)
 
 Installation
----------------------------------------
+------------
 
 * Download: [zip](https://github.com/alexgibson/concierge/archive/master.zip)
 * [Bower](https://github.com/twitter/bower/): `bower install concierge`
 * Git: `git clone https://github.com/alexgibson/concierge.git`
 
 Setup
----------
+-----
 
 This component can be used as an AMD module, or a global.
 
